@@ -23,6 +23,7 @@ const Home = () => {
   const [searchText, setSearchText] = useState('');
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState(null);
+  
   const BASE_URL = process.env.REACT_APP_BASE_URL
   const POST_DATA_API = BASE_URL + "/post"
 

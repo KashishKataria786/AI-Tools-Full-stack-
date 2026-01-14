@@ -1,24 +1,12 @@
 import express from "express";
-import * as dotenv from 'dotenv'
-
-dotenv.config();
-
+import { image_generationFromGemini, image_generationFromHuggingFace, image_generationFromOpenAI } from "../controllers/dalle.controllers.js";
+import { generateTexts } from "../controllers/textgeneration.controllers.js";
 const router = express.Router()
 
-const token = process.env.HP_TOKEN;
-router.post('/dalle', async (req,res)=> {
-    const {prompt} = req.body;
-    console.log("Prompt is", prompt)
-    try {
-        
-        return res.status(200).json({
-            success:true, 
-            
-        })
-    } catch (error) {
-        console.error(error);
-        res.status(500).send(error.message || 'Something went wrong while creating image');
-    }   
-})
+
+router.post('/dalle',image_generationFromOpenAI)
+router.post('/gemini',image_generationFromGemini)
+router.post('/hf', image_generationFromHuggingFace);
+router.post('/textgen', generateTexts);
 
 export default router;
