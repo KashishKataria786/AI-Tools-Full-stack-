@@ -177,7 +177,7 @@ const Summarize = () => {
         url: 'https://deep-translate1.p.rapidapi.com/language/translate/v2',
         headers: {
           'content-type': 'application/json',
-          'X-RapidAPI-Key': 'c9fb3c3e32mshd163e9a65ed84e3p12816djsn7c9c6d8a7260',
+          'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_API_KEY}`,
           'X-RapidAPI-Host': 'deep-translate1.p.rapidapi.com'
         },
         data: {
@@ -210,7 +210,7 @@ const Summarize = () => {
         url: 'https://deep-translate1.p.rapidapi.com/language/translate/v2',
         headers: {
           'content-type': 'application/json',
-          'X-RapidAPI-Key': 'c9fb3c3e32mshd163e9a65ed84e3p12816djsn7c9c6d8a7260',
+          'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_API_KEY}`,
           'X-RapidAPI-Host': 'deep-translate1.p.rapidapi.com'
         },
         data: {
