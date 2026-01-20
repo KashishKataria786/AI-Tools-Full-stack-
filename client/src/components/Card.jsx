@@ -35,7 +35,7 @@ const Card = ({ _id, name, prompt, model, photo, answer }) => {
             {name && (
               <>
                 <div className="w-7 h-7 rounded-full bg-green-700 flex justify-center items-center text-white text-xs font-bold">
-                  {name[0]}
+                  {name}
                 </div>
                 <p className="text-white text-sm">{name}</p>
               </>

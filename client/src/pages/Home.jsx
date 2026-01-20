@@ -59,7 +59,7 @@ const Home = () => {
 // eslint-disable-next-line 
   useEffect(() => {
     fetchPosts();
-  }, [])
+  },[])
 
   return (
     <section className="max-w-7xl mx-auto mt-2">
