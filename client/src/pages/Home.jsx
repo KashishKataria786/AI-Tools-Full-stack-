@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Card from '../components/Card'
 import FormField from '../components/FormField'
 import Loader from '../components/Loader'
@@ -25,7 +25,7 @@ const Home = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL
   const POST_DATA_API = BASE_URL + "/post"
 
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     setLoading(true)
     try {
       const response = await fetch(POST_DATA_API)
@@ -38,7 +38,7 @@ const Home = () => {
     } finally {
       setLoading(false)
     }
-  }
+  }, [ POST_DATA_API ]);
 
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout)
@@ -58,8 +58,8 @@ const Home = () => {
   }
 
   useEffect(() => {
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, [searchText])
 
   return (
     <section className="max-w-7xl mx-auto mt-2">

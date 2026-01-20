@@ -9,7 +9,7 @@ const Card = ({ _id, name, prompt, model, photo, answer }) => {
     return (
       <div className="rounded-xl shadow-card text-[#10131f] p-5 bg-white border break-inside-avoid">
         <p className="text-sm font-semibold mb-2">Prompt</p>
-        <p className="text-sm mb-4 opacity-90">{prompt}</p>
+        <p className="text-md font-semibold mb-4 opacity-90">{prompt}</p>
 
         <p className="text-sm font-semibold mb-2">Answer</p>
         <p className="text-sm opacity-90 leading-relaxed">{answer}</p>

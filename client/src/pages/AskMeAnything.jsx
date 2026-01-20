@@ -39,7 +39,7 @@ export default function AskMeAnything() {
  
 
     try{
-      const share = await axios.post(`${process.env.REACT_APP_BASE_URL}/post`, {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/post`, {
         prompt: question,
         answer: answer
       });
