@@ -7,7 +7,9 @@ import {
   ChevronLeft, 
   ChevronRight, 
   Menu, 
-  X 
+  X, 
+  FileQuestionIcon,
+  Image
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -90,9 +92,11 @@ const Sidebar = () => {
         {/* NAVIGATION */}
         <nav className="flex flex-col space-y-2">
           <NavItem to="/" icon={<LayoutDashboard size={18} />} label="Community" isOpen={isOpen} isMobileOpen={isMobileOpen} onClick={handleNavLinkClick} baseClass={baseClass} />
-          <NavItem to="/create-post" icon={<BarChart3 size={18} />} label="Create Image" isOpen={isOpen} isMobileOpen={isMobileOpen} onClick={handleNavLinkClick} baseClass={baseClass} />
+          <NavItem to="/create-post" icon={<Image size={18} />} label="Create Image" isOpen={isOpen} isMobileOpen={isMobileOpen} onClick={handleNavLinkClick} baseClass={baseClass} />
+          <NavItem to="/askmeanything" icon={<FileQuestionIcon size={18} />} label="Ask Me Anything" isOpen={isOpen} isMobileOpen={isMobileOpen} onClick={handleNavLinkClick} baseClass={baseClass} />
           <NavItem to="/summarize" icon={<BarChart3 size={18} />} label="Summarizer" isOpen={isOpen} isMobileOpen={isMobileOpen} onClick={handleNavLinkClick} baseClass={baseClass} />
           <NavItem to="/pdf-analyzer" icon={<BarChart2 size={18} />} label="Pdf Analyzer" isOpen={isOpen} isMobileOpen={isMobileOpen} onClick={handleNavLinkClick} baseClass={baseClass} />
+          
         </nav>
       </aside>
     </>

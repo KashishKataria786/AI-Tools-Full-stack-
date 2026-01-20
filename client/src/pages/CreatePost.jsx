@@ -177,7 +177,7 @@ const CreatePost = () => {
           </div>
 
           {/* IMAGE PREVIEW */}
-          <div className="relative bg-gray-50 border rounded-lg w-[30rem] h-[30rem] flex justify-center items-center">
+          <div className="relative bg-gray-50 border rounded-lg sm:w-full md:w-[30rem] h-[30rem] flex justify-center items-center">
             {errorHandler.isError ? (
               <div className="text-center">
                 <BiSolidError className="w-24 h-24 text-red-500 mx-auto" />

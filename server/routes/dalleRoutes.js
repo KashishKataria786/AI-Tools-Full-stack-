@@ -7,6 +7,6 @@ const router = express.Router()
 router.post('/dalle',image_generationFromOpenAI)
 router.post('/gemini',image_generationFromGemini)
 router.post('/hf', image_generationFromHuggingFace);
-router.post('/textgen', generateTexts);
+
 
 export default router;

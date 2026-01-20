@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
 import { loader } from "../assets";
-
 import { toast } from 'react-hot-toast';
 import DropdownMenuWithSelectedValue from '../components/DropDown';
-import axios, { all } from 'axios'
+import axios ,{all} from 'axios'
 import { languages } from '../utils';
 import { FiLink2 } from 'react-icons/fi';
 import { FiCopy } from 'react-icons/fi';
@@ -87,7 +86,7 @@ const Summarize = () => {
           length: '3'
         },
         headers: {
-          'X-RapidAPI-Key': RAPID_API,
+          'X-RapidAPI-Key':process.env.X_RAPID_API_KEY,
           'X-RapidAPI-Host': 'article-extractor-and-summarizer.p.rapidapi.com'
         }
       };

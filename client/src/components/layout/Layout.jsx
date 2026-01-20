@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         <Header />
 
       {/* Flex wrapper under the header */}
-      <div className="md:flex h-[calc(100vh-64px)]">
+      <div className="md:flex h-[calc(100vh-64px)] bg-gray-50">
         <Sidebar />
 
         <main className="flex-1 overflow-y-auto p-6 bg-gray-50">

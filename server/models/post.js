@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 const Post = new mongoose.Schema({
     name:{
         type: String,
-        required:true
     },
     prompt: {
         type: String,
@@ -11,11 +10,12 @@ const Post = new mongoose.Schema({
     },
     model:{
         type: String,
-        required:true
     },
     photo: {
         type: String,
-        required:true
+    },
+    answer:{
+        type:String
     }
 });
 

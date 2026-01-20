@@ -1,18 +1,17 @@
 import { Route, Routes } from "react-router-dom";
 import {useEffect, lazy , Suspense} from 'react'
-import Summarize from "./pages/Summarize";
-import SummarizeApp from "./components/SummarizeApp";
-import Layout from './components/layout/Layout.jsx';
+// import Summarize from "./pages/Summarize";
+// import SummarizeApp from "./components/SummarizeApp";
 import CustomToast from "./components/CustomToast.jsx";
 import PageTransition from "./components/common/PageTransition.jsx";
 
 const Home = lazy(()=>import('./pages/Home'))
 const CreatePost = lazy(()=>import('./pages/CreatePost'));
 const CommingSoon = lazy(()=>import('./components/common/CommingSoon'));
-
+const AskMeAnything = lazy(()=>import('./pages/AskMeAnything'));
+const Layout = lazy(()=>import('./components/layout/Layout.jsx'));
 
 const App = () => {
-  
   useEffect(()=>{
     CustomToast();
   },[])
@@ -24,8 +23,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/summarize" element={<CommingSoon />} />
+          <Route path="/summarize" element={<CommingSoon/>} />
           <Route path="/pdf-analyzer" element={<CommingSoon />} />
+          <Route path="/askmeanything" element={<AskMeAnything />} />
         </Routes>
     </Layout>
     </Suspense>

@@ -3,11 +3,14 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import {connectDB} from './config/database.js'
 import postRoutes from './routes/postRoutes.js'
+import router from './routes/summarizerRoutes.js'
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan'
 import helmet from 'helmet'
 import colors from 'colors'
 import dalleRoutes from './routes/dalleRoutes.js'
+import AskRouter from './routes/askmeanythingRoutes.js'
+
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 
@@ -30,6 +33,8 @@ app.use(
 
 app.use('/api/v1/', postRoutes);
 app.use('/api/v1/', dalleRoutes);
+app.use('/api/v1/summarizer', router);
+app.use('/api/v1/askmeanything', AskRouter);
 
 app.get('/', async (req, res) => {
     res.status(200).json({
